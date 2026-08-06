@@ -59,6 +59,15 @@ Our mission is to cultivate a strong research culture where students transform i
       <strong>ghostyARYAN</strong>
     </a>
     <br>
+    2 commits
+  </td>
+  <td align="center">
+    <a href="https://github.com/github-actions[bot]">
+      <img src="https://github.com/github-actions[bot].png?size=120" width="120" alt="github-actions[bot]">
+      <br>
+      <strong>github-actions[bot]</strong>
+    </a>
+    <br>
     1 commit
   </td>
   <td align="center">
@@ -120,15 +129,6 @@ Our mission is to cultivate a strong research culture where students transform i
       <img src="https://github.com/diptj2528-art.png?size=120" width="120" alt="Dipti">
       <br>
       <strong>Dipti</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/gracyverma">
-      <img src="https://github.com/gracyverma.png?size=120" width="120" alt="gracyverma">
-      <br>
-      <strong>gracyverma</strong>
     </a>
     <br>
     AURA Member
