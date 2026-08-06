@@ -32,6 +32,8 @@ jobs:
           node-version: 20
 
       - name: Refresh showcase
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: node scripts/update-member-showcase.mjs
 
       - name: Commit changes

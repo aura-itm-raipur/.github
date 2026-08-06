@@ -42,101 +42,16 @@ Our mission is to cultivate a strong research culture where students transform i
 
 <!-- MEMBER-SHOWCASE:START -->
 <table align="center">
-  <tr>
-  <td align="center">
-    <a href="https://github.com">
-      <img src="../assets/member-placeholder.svg" width="120" alt="ghostyARYAN">
-      <br>
-      <strong>ghostyARYAN</strong>
-    </a>
-    <br>
-    6 commits
-  </td>
-  <td align="center">
-    <a href="https://github.com/ghostyARYAN">
-      <img src="https://github.com/ghostyARYAN.png?size=120" width="120" alt="Aryan Patel">
-      <br>
-      <strong>Aryan Patel</strong>
-    </a>
-    <br>
-    2 commits
-  </td>
-  <td align="center">
-    <a href="https://github.com/github-actions[bot]">
-      <img src="https://github.com/github-actions[bot].png?size=120" width="120" alt="github-actions[bot]">
-      <br>
-      <strong>github-actions[bot]</strong>
-    </a>
-    <br>
-    2 commits
-  </td>
-  <td align="center">
-    <a href="https://github.com/Aamir4324m">
-      <img src="https://github.com/Aamir4324m.png?size=120" width="120" alt="Aamir">
-      <br>
-      <strong>Aamir</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/abhisketch077-netizen">
-      <img src="https://github.com/abhisketch077-netizen.png?size=120" width="120" alt="Abhishek sharma">
-      <br>
-      <strong>Abhishek sharma</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  </tr>
-  <tr>
-  <td align="center">
-    <a href="https://github.com/addyasha">
-      <img src="https://github.com/addyasha.png?size=120" width="120" alt="Addyasha Agrawal">
-      <br>
-      <strong>Addyasha Agrawal</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/amarcj">
-      <img src="https://github.com/amarcj.png?size=120" width="120" alt="Amar Sinha">
-      <br>
-      <strong>Amar Sinha</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/beneetabinu">
-      <img src="https://github.com/beneetabinu.png?size=120" width="120" alt="Beneeta Binu">
-      <br>
-      <strong>Beneeta Binu</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/dhrishtirathore61-lang">
-      <img src="https://github.com/dhrishtirathore61-lang.png?size=120" width="120" alt="Dhrishti Rathore">
-      <br>
-      <strong>Dhrishti Rathore</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  <td align="center">
-    <a href="https://github.com/diptj2528-art">
-      <img src="https://github.com/diptj2528-art.png?size=120" width="120" alt="Dipti">
-      <br>
-      <strong>Dipti</strong>
-    </a>
-    <br>
-    AURA Member
-  </td>
-  </tr>
-</table>
+<tr>
+
+<td align="center">
+<a href="https://github.com/ghostyARYAN">
+<img src="https://avatars.githubusercontent.com/u/65958223?v=4" width="110"/><br>
+<b>Aryan Patel</b>
+</a><br>
+2 commits
+</td>
+</tr></table>
 <!-- MEMBER-SHOWCASE:END -->
 
 ---

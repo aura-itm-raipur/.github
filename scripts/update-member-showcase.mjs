@@ -1,137 +1,150 @@
-import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { execFileSync } from "node:child_process";
+import { readFileSync, writeFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(scriptDir, '..');
-const readmePath = path.join(repoRoot, 'profile', 'README.md');
-const placeholderImage = '../assets/member-placeholder.svg';
-const startMarker = '<!-- MEMBER-SHOWCASE:START -->';
-const endMarker = '<!-- MEMBER-SHOWCASE:END -->';
-const teamMembers = [
-  { displayName: 'Aamir', username: 'Aamir4324m' },
-  { displayName: 'Abhishek sharma', username: 'abhisketch077-netizen' },
-  { displayName: 'Addyasha Agrawal', username: 'addyasha' },
-  { displayName: 'Amar Sinha', username: 'amarcj' },
-  { displayName: 'Beneeta Binu', username: 'beneetabinu' },
-  { displayName: 'Dhrishti Rathore', username: 'dhrishtirathore61-lang' },
-  { displayName: 'Dipti', username: 'diptj2528-art' },
-  { displayName: 'Aryan Patel', username: 'ghostyARYAN' },
-  { displayName: 'gracyverma', username: 'gracyverma' },
-  { displayName: 'jaykumarsolanki3487-dev', username: 'jaykumarsolanki3487-dev' },
-  { displayName: 'Richy Lima', username: 'Richii25' },
-  { displayName: 'sarjupradhan474-coder', username: 'sarjupradhan474-coder' },
-  { displayName: 'Tikesh Sahu', username: 'Tikesh01' },
-];
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, "..");
+const readmePath = path.join(repoRoot, "profile", "README.md");
 
-function escapeHtml(value) {
-  return value
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;');
+const START = "<!-- MEMBER-SHOWCASE:START -->";
+const END = "<!-- MEMBER-SHOWCASE:END -->";
+
+const TOKEN = process.env.GH_TOKEN;
+
+async function githubUser(username) {
+    const headers = {
+        "User-Agent": "AURA"
+    };
+
+    if (TOKEN) {
+        headers.Authorization = `Bearer ${TOKEN}`;
+    }
+
+    const res = await fetch(`https://api.github.com/users/${username}`, {
+        headers
+    });
+
+    if (!res.ok) return null;
+
+    const data = await res.json();
+
+    return {
+        login: data.login,
+        name: data.name || data.login,
+        avatar: data.avatar_url,
+        url: data.html_url
+    };
 }
 
 function getContributors() {
-  const output = execFileSync('git', ['shortlog', '-sne', '--all'], {
-    cwd: repoRoot,
-    encoding: 'utf8',
-  }).trim();
+    const output = execFileSync(
+        "git",
+        ["shortlog", "-sne", "--all"],
+        {
+            cwd: repoRoot,
+            encoding: "utf8"
+        }
+    );
 
-  if (!output) {
-    return [];
-  }
+    return output
+        .trim()
+        .split("\n")
+        .map(line => {
 
-  return output
-    .split(/\r?\n/)
-    .map((line) => {
-      const match = line.match(/^\s*(\d+)\s+(.+?)\s+<(.+)>$/);
+            const match = line.match(
+                /^\s*(\d+)\s+(.+?)\s+<(.+)>$/
+            );
 
-      if (!match) {
-        return null;
-      }
+            if (!match) return null;
 
-      const [, countText, displayName, email] = match;
-      const usernameMatch = email.match(/^(?:[^+]+\+)?([^@]+)@users\.noreply\.github\.com$/i);
+            const commits = Number(match[1]);
+            const email = match[3];
 
-      return {
-        count: Number(countText),
-        displayName: displayName.trim(),
-        username: usernameMatch ? usernameMatch[1] : null,
-      };
-    })
-    .filter(Boolean)
-    .sort((left, right) => right.count - left.count || left.displayName.localeCompare(right.displayName));
+            const usernameMatch =
+                email.match(/^(?:.+\+)?([^@]+)@users\.noreply\.github\.com$/);
+
+            if (!usernameMatch) return null;
+
+            return {
+                commits,
+                username: usernameMatch[1]
+            };
+
+        })
+        .filter(Boolean)
+        .filter(x => x.username !== "github-actions[bot]")
+        .sort((a, b) => b.commits - a.commits)
+        .slice(0, 10);
 }
 
-function renderShowcase(contributors) {
-  const normalizedContributors = contributors.map((contributor) => ({
-    displayName: contributor.displayName,
-    username: contributor.username,
-    count: contributor.count,
-    kind: 'contributor',
-  }));
+function render(users) {
 
-  const seen = new Set(
-    normalizedContributors.map((entry) => entry.username || entry.displayName.toLowerCase())
-  );
+    let html = `<table align="center">\n`;
 
-  const normalizedTeamMembers = teamMembers
-    .filter((member) => !seen.has(member.username || member.displayName.toLowerCase()))
-    .map((member) => ({
-      displayName: member.displayName,
-      username: member.username,
-      kind: 'member',
-    }));
+    for (let i = 0; i < users.length; i++) {
 
-  const featuredMembers = [...normalizedContributors, ...normalizedTeamMembers].slice(0, 10);
+        if (i % 5 === 0)
+            html += "<tr>\n";
 
-  const cards = featuredMembers.map((member) => {
-    const profileUrl = member.username ? `https://github.com/${member.username}` : 'https://github.com';
-    const avatarUrl = member.username ? `https://github.com/${member.username}.png?size=120` : placeholderImage;
+        const u = users[i];
 
-    return [
-      '  <td align="center">',
-      `    <a href="${profileUrl}">`,
-      `      <img src="${avatarUrl}" width="120" alt="${escapeHtml(member.displayName)}">`,
-      '      <br>',
-      `      <strong>${escapeHtml(member.displayName)}</strong>`,
-      '    </a>',
-      '    <br>',
-      member.kind === 'contributor'
-        ? `    ${member.count} commit${member.count === 1 ? '' : 's'}`
-        : '    AURA Member',
-      '  </td>',
-    ].join('\n');
-  });
+        html += `
+<td align="center">
+<a href="${u.url}">
+<img src="${u.avatar}" width="110"/><br>
+<b>${u.name}</b>
+</a><br>
+${u.commits} commits
+</td>
+`;
 
-  const rows = [];
+        if (i % 5 === 4)
+            html += "</tr>\n";
+    }
 
-  for (let index = 0; index < cards.length; index += 5) {
-    rows.push(['  <tr>', ...cards.slice(index, index + 5), '  </tr>'].join('\n'));
-  }
+    if (users.length % 5 !== 0)
+        html += "</tr>";
 
-  return [
-    '<table align="center">',
-    ...rows,
-    '</table>',
-  ].join('\n');
+    html += "</table>";
+
+    return html;
 }
 
-const readme = readFileSync(readmePath, 'utf8');
-const startIndex = readme.indexOf(startMarker);
-const endIndex = readme.indexOf(endMarker);
+async function main() {
 
-if (startIndex === -1 || endIndex === -1 || endIndex < startIndex) {
-  throw new Error('Member showcase markers were not found in profile/README.md.');
+    const contributors = getContributors();
+
+    const users = [];
+
+    for (const c of contributors) {
+
+        const profile = await githubUser(c.username);
+
+        if (!profile) continue;
+
+        users.push({
+            ...profile,
+            commits: c.commits
+        });
+
+    }
+
+    const readme = readFileSync(readmePath, "utf8");
+
+    const start = readme.indexOf(START);
+    const end = readme.indexOf(END);
+
+    const updated =
+        readme.slice(0, start + START.length) +
+        "\n" +
+        render(users) +
+        "\n" +
+        readme.slice(end);
+
+    writeFileSync(readmePath, updated);
+
+    console.log("Updated showcase.");
 }
 
-const before = readme.slice(0, startIndex + startMarker.length);
-const after = readme.slice(endIndex);
-const showcase = renderShowcase(getContributors());
-const nextReadme = `${before}\n${showcase}\n${after}`;
-
-if (nextReadme !== readme) {
-  writeFileSync(readmePath, nextReadme);
-}
+main();
