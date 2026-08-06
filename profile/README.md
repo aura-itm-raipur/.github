@@ -44,19 +44,19 @@ Our mission is to cultivate a strong research culture where students transform i
 <table align="center">
   <tr>
   <td align="center">
-    <a href="https://github.com/ghostyARYAN">
-      <img src="https://github.com/ghostyARYAN.png?size=120" width="120" alt="Aryan Patel">
-      <br>
-      <strong>Aryan Patel</strong>
-    </a>
-    <br>
-    2 commits
-  </td>
-  <td align="center">
     <a href="https://github.com">
       <img src="../assets/member-placeholder.svg" width="120" alt="ghostyARYAN">
       <br>
       <strong>ghostyARYAN</strong>
+    </a>
+    <br>
+    6 commits
+  </td>
+  <td align="center">
+    <a href="https://github.com/ghostyARYAN">
+      <img src="https://github.com/ghostyARYAN.png?size=120" width="120" alt="Aryan Patel">
+      <br>
+      <strong>Aryan Patel</strong>
     </a>
     <br>
     2 commits
@@ -68,7 +68,7 @@ Our mission is to cultivate a strong research culture where students transform i
       <strong>github-actions[bot]</strong>
     </a>
     <br>
-    1 commit
+    2 commits
   </td>
   <td align="center">
     <a href="https://github.com/Aamir4324m">
@@ -88,6 +88,8 @@ Our mission is to cultivate a strong research culture where students transform i
     <br>
     AURA Member
   </td>
+  </tr>
+  <tr>
   <td align="center">
     <a href="https://github.com/addyasha">
       <img src="https://github.com/addyasha.png?size=120" width="120" alt="Addyasha Agrawal">

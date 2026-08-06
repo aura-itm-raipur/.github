@@ -104,13 +104,17 @@ function renderShowcase(contributors) {
         : '    AURA Member',
       '  </td>',
     ].join('\n');
-  }).join('\n');
+  });
+
+  const rows = [];
+
+  for (let index = 0; index < cards.length; index += 5) {
+    rows.push(['  <tr>', ...cards.slice(index, index + 5), '  </tr>'].join('\n'));
+  }
 
   return [
     '<table align="center">',
-    '  <tr>',
-    cards,
-    '  </tr>',
+    ...rows,
     '</table>',
   ].join('\n');
 }
