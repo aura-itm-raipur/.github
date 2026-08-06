@@ -286,3 +286,13 @@ If you find our projects helpful,
 *"Research Today. Innovate Tomorrow."*
 
 </div>
+
+---
+
+<div align="center">
+
+Made with ❤️ by the members of **Advanced University Research Alliance (AURA)**
+
+ITM University, Raipur
+
+</div>
