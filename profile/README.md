@@ -50,7 +50,7 @@ Our mission is to cultivate a strong research culture where students transform i
       <strong>ghostyARYAN</strong>
     </a>
     <br>
-    6 commits
+    7 commits
   </td>
   <td align="center">
     <a href="https://github.com/ghostyARYAN">
