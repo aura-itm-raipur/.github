@@ -1,10 +1,12 @@
-<div align="center">
+<p align="center">
+	<img src="../assets/banner.png" alt="AURA Banner">
+</p>
 
-<img src="https://raw.githubusercontent.com/aura-itm-raipur/.github/main/assets/aura-logo.png" alt="AURA Logo" width="180"/>
+<div align="center">
 
 # Advanced University Research Alliance (AURA)
 
-### 🚀 Research • Innovation • Open Source • Emerging Technologies
+### Research • Innovation • Open Source • AI
 
 Official GitHub Organization of the **Advanced University Research Alliance (AURA)**
 
@@ -13,10 +15,10 @@ Official GitHub Organization of the **Advanced University Research Alliance (AUR
 
 <p>
 
-![Research](https://img.shields.io/badge/Research-Driven-blue?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-Welcome-success?style=for-the-badge)
-![Innovation](https://img.shields.io/badge/Innovation-Focused-orange?style=for-the-badge)
-![Students](https://img.shields.io/badge/Students-SER-red?style=for-the-badge)
+<img src="https://img.shields.io/badge/Research-blue?style=for-the-badge">
+<img src="https://img.shields.io/badge/Open%20Source-success?style=for-the-badge">
+<img src="https://img.shields.io/badge/Innovation-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/ITM%20University-SER-red?style=for-the-badge">
 
 </p>
 
@@ -33,6 +35,107 @@ The **Advanced University Research Alliance (AURA)** is a research community und
 AURA empowers students to explore emerging technologies, conduct impactful research, build innovative products, contribute to open-source projects, and collaborate with faculty mentors and industry experts.
 
 Our mission is to cultivate a strong research culture where students transform ideas into real-world solutions.
+
+---
+
+# 👥 Top 10 Contributors
+
+<!-- MEMBER-SHOWCASE:START -->
+<table align="center">
+  <tr>
+  <td align="center">
+    <a href="https://github.com/ghostyARYAN">
+      <img src="https://github.com/ghostyARYAN.png?size=120" width="120" alt="Aryan Patel">
+      <br>
+      <strong>Aryan Patel</strong>
+    </a>
+    <br>
+    2 commits
+  </td>
+  <td align="center">
+    <a href="https://github.com/Aamir4324m">
+      <img src="https://github.com/Aamir4324m.png?size=120" width="120" alt="Aamir">
+      <br>
+      <strong>Aamir</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/abhisketch077-netizen">
+      <img src="https://github.com/abhisketch077-netizen.png?size=120" width="120" alt="Abhishek sharma">
+      <br>
+      <strong>Abhishek sharma</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/addyasha">
+      <img src="https://github.com/addyasha.png?size=120" width="120" alt="Addyasha Agrawal">
+      <br>
+      <strong>Addyasha Agrawal</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/amarcj">
+      <img src="https://github.com/amarcj.png?size=120" width="120" alt="Amar Sinha">
+      <br>
+      <strong>Amar Sinha</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/beneetabinu">
+      <img src="https://github.com/beneetabinu.png?size=120" width="120" alt="Beneeta Binu">
+      <br>
+      <strong>Beneeta Binu</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/dhrishtirathore61-lang">
+      <img src="https://github.com/dhrishtirathore61-lang.png?size=120" width="120" alt="Dhrishti Rathore">
+      <br>
+      <strong>Dhrishti Rathore</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/diptj2528-art">
+      <img src="https://github.com/diptj2528-art.png?size=120" width="120" alt="Dipti">
+      <br>
+      <strong>Dipti</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/gracyverma">
+      <img src="https://github.com/gracyverma.png?size=120" width="120" alt="gracyverma">
+      <br>
+      <strong>gracyverma</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  <td align="center">
+    <a href="https://github.com/jaykumarsolanki3487-dev">
+      <img src="https://github.com/jaykumarsolanki3487-dev.png?size=120" width="120" alt="jaykumarsolanki3487-dev">
+      <br>
+      <strong>jaykumarsolanki3487-dev</strong>
+    </a>
+    <br>
+    AURA Member
+  </td>
+  </tr>
+</table>
+<!-- MEMBER-SHOWCASE:END -->
 
 ---
 
@@ -152,13 +255,9 @@ Students of **ITM University, Raipur** who are passionate about
 
 # 📬 Contact
 
-🌐 **Website**
+🌐 **Website** - https://aura.itmuniversity.org
 
-https://aura.itmuniversity.org
-
-📧 **Email**
-
-aura@itmuniversity.org
+📧 **Email** -  aura@itmuniversity.org
 
 ---
 

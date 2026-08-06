@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">AURA Member Placeholder</title>
+  <desc id="desc">Generic members icon for empty showcase slots</desc>
+  <rect width="120" height="120" rx="18" fill="#101010"/>
+  <circle cx="43" cy="44" r="14" fill="#d4d4d8"/>
+  <circle cx="78" cy="44" r="14" fill="#d4d4d8"/>
+  <path d="M20 92c2-16 14-28 28-28s26 12 28 28" fill="#d4d4d8"/>
+  <path d="M55 92c2-12 11-21 23-21s21 9 23 21" fill="#a1a1aa"/>
+  <rect x="18" y="18" width="84" height="84" rx="14" fill="none" stroke="#60a5fa" stroke-width="4" opacity="0.5"/>
+</svg>

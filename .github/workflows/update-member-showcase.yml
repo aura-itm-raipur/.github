@@ -1,0 +1,48 @@
+name: Update Member Showcase
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'profile/README.md'
+      - 'scripts/update-member-showcase.mjs'
+      - '.github/workflows/update-member-showcase.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh showcase
+        run: node scripts/update-member-showcase.mjs
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- profile/README.md; then
+            echo "No showcase changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          git commit -m "Update member showcase"
+          git push
